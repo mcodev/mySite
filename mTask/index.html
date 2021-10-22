@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mTask</title>
+    <link rel="shortcut icon" href="mainIcon.ico" type="image/x-icon">
+    <style>
+        body {
+            cursor: default;
+        }
+        
+        .mtaskwrap {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 5%;
+        }
+        
+        .mtaskdown {
+            justify-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            background-color: rgba(0, 110, 255, 0.877);
+            width: 120px;
+            height: 50px;
+            margin-left: 30px;
+            margin-right: 30px;
+            border-radius: 25px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            font-size: 22px;
+            font-weight: 500;
+            color: white;
+            text-align: center;
+        }
+        
+        .mtaskdown:hover {
+            background-color: rgba(0, 110, 255, 0.707);
+        }
+        
+        .mtaskdown p {
+            margin-top: 10px;
+            margin-top: .7em;
+            font-size: 20px;
+            font-weight: 500;
+            color: white;
+            letter-spacing: .1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="mainIcon.png" alt="mtask" style="margin-top: 5%;">
+        <h1 style="font-size:80px; letter-spacing: .9rem; color:rgb(80, 80, 80);">mTask</h1>
+        <h3 style="font-size:20px; letter-spacing: .7rem; color:rgb(119, 112, 112);">Daily task manager for desktop</h3>
+        <h4 style="letter-spacing: .3rem; color:rgb(119, 112, 112); margin-top:8%; margin-bottom:2%;">download now for:</h4>
+    </div>
+
+    <div class="mtaskwrap">
+
+        <div class="mtaskdown" onclick=" download('files/mTask.dmg', 'mTask')">
+            <p>mac</p>
+        </div>
+        <div class="mtaskdown" onclick=" download('files/mTask.exe', 'mTask')">
+            <p>win</p>
+        </div>
+        <script>
+            var count = 1;
+
+            function download(uri, name) {
+                if (count % 2 != 0) {
+                    var link = document.createElement("a");
+                    link.setAttribute('download', name);
+                    link.href = uri;
+                    document.body.appendChild(link);
+                    link.click();
+                    link.remove();
+                }
+                count += 1;
+            }
+        </script>
+    </div>
+</body>
+
+</html>

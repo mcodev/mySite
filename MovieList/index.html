@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieList</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <div class="topBar">
+      <h1 class="appTitle"><span>M</span>ovie<span>L</span>ist</h1>
+    </div>
+
+    <div class="middleSection">
+      <p id="inTheaters"></p>
+      <input
+        class="searchInput"
+        id="searchInput"
+        type="text"
+        placeholder="Search movie"
+      />
+    </div>
+
+    <p class="goToTop" onclick="window.scrollTo(0, 0)">Top</p>
+
+    <section id="content"></section>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>

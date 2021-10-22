@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mTasks</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="main">
+
+
+<!-- TASK MANAGER -->
+
+            <div class="taskManager scale-in-center" id="taskManager" >
+                <div class="taskLeft">
+
+                <div class="input">
+                    <label for="inp" class="inp">
+                        <input type="text" id="taskInput"  placeholder="&nbsp;">
+                        <span class="label">create task</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
+
+                    <div class="tasksView">
+                        <div class="tasksViewL">
+                            <p class="taskHeader">New tasks</p>
+                            <div class="preTasks "> 
+                                <ul id="myUL" class="tasks">
+                
+                
+                                </ul>
+                            </div> 
+                        </div>
+                        <div class="tasksViewR">
+                            <p class="taskHeader">Completed tasks</p>
+                            <div class="preReady">
+                                <ul id="myReady">
+        
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="taskRight">
+                    <div class="stats">
+                        <div class="remain dirCol">
+                            <p id="tasksRemaining" class="statNum">0</p>
+                            <p class="statTxt">remain</p>
+                        </div>
+                        <div class="complete dirCol">
+                            <p id="tasksCompleted" class="statNum">0</p>
+                            <p class="statTxt">complete</p>
+                        </div>
+                        <div class="total dirCol">
+                            <p id="total"class="statNum" >0</p>
+                            <p class="statTxt">total</p>
+                        </div>
+                    </div>
+                    <div class="taskProgress dirCol">
+                        <div class="detProgress"><p>Progress <span id="number">0%</span></p></div>
+                        <div class="progress">
+                            <div class="progress-done" data-done="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clockClosure">
+                        
+                        <div class="time">
+                            <span class="hours"></span>
+                            <span class="colon">:</span>
+                            <span class="minutes"></span>
+                            <span class="colon" hidden>:</span>
+                            <span class="seconds" hidden></span>
+                        </div>
+                        
+
+                        <div class="date">
+
+                            <span class="day"></span>
+                            <span class="month"></span>
+                            <span class="year"></span>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

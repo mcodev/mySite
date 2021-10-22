@@ -1,0 +1,356 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: white;
+  cursor: default;
+  background: rgb(28, 36, 42);
+  background: linear-gradient(
+    90deg,
+    rgba(28, 36, 42, 1) 0%,
+    rgb(36, 49, 56) 50%,
+    rgba(28, 36, 42, 1) 100%
+  );
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Top Bar  */
+
+.topBar {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.appTitle {
+  letter-spacing: 0.5rem;
+  font-size: 55px;
+  margin: 0;
+}
+
+.appTitle span {
+  font-size: 65px;
+  color: rgb(216, 84, 84);
+}
+
+/* Middle section */
+
+.middleSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding-inline: 40px;
+  flex-wrap: wrap-reverse;
+  margin-top: 20px;
+}
+
+#inTheaters {
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.507);
+  letter-spacing: 0.15rem;
+}
+.searchInput {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.425);
+  width: 300px;
+  height: 40px;
+  border-radius: 50px;
+  padding-inline: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  outline: none;
+  font-weight: 200;
+}
+.searchInput:focus {
+  border-color: red;
+}
+
+::placeholder {
+  color: gray;
+  opacity: 0.8;
+}
+
+:-ms-input-placeholder {
+  color: gray;
+}
+
+::-ms-input-placeholder {
+  color: gray;
+}
+/* Movies Container */
+
+#content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  overflow: scroll;
+  padding-top: 60px;
+  padding-inline: 30px;
+}
+
+/* Movie card */
+
+.card {
+  width: 200px;
+  height: 440px;
+  margin: 30px 30px;
+}
+
+.ratingContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -12px;
+}
+
+.rating {
+  text-align: center;
+  font-size: 12px;
+  padding-block: 5px;
+  width: 30%;
+  border-radius: 50px;
+  margin: 0;
+  z-index: 10;
+  transition: 0.5s;
+}
+.imgContainer {
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.overview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 100%;
+  height: 310px;
+  transform: translateY(100%) translateX(0px) translateZ(0);
+  transition: transform 0.5s ease-out;
+  background: rgba(48, 47, 47, 0.85);
+  color: rgba(255, 255, 255, 0.685);
+  text-align: center;
+  overflow: scroll;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  font-size: 12px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.overview::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
+}
+
+.imgContainer:hover .overview {
+  transform: translateY(0) translateZ(0);
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardTitle {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.cardTitle:hover {
+  color: rgb(216, 84, 84);
+}
+
+.genres {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.genres p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.41);
+  margin-inline: 2px;
+  margin-block: 0;
+}
+
+.details {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.74);
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  overflow: visible;
+  flex: 1;
+}
+
+.details h3 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.video {
+  width: 100%;
+
+  flex: 2;
+}
+.comments {
+  flex: 1;
+  width: 100%;
+  padding-inline: 20px;
+  font-size: 12px;
+  overflow: scroll;
+  color: rgba(255, 255, 255, 0.678);
+}
+
+.similar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: scroll;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.466);
+  padding-inline: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.578);
+}
+.similar p {
+  margin: 0;
+}
+
+.active .cardInfo {
+  margin: -100px;
+  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.active .cardTitle {
+  color: rgb(216, 84, 84);
+}
+.active .details {
+  display: flex;
+}
+.active .imgContainer {
+  -webkit-transform: translateX(-100px) translateY(-100px);
+  -moz-transform: translateX(-100px) translateY(-100px);
+  -o-transform: translateX(-100px) translateY(-100px);
+  -ms-transform: translateX(-100px) translateY(-100px);
+  transform: translateX(-75px) translateY(-100px);
+  width: 350px;
+  height: 500px;
+  z-index: 1000;
+}
+
+.active .ratingContainer {
+  display: none;
+}
+
+.active .imgContainer .overview {
+  display: none;
+}
+
+/* Go TO Top */
+
+.goToTop {
+  background-color: beige;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: black;
+  padding: 15px;
+  border-radius: 15px;
+  transition: 0.2s;
+}
+.goToTop:hover {
+  background-color: rgb(216, 84, 84);
+  color: white;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 450px) {
+  #content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .middleSection {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .middleSection {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .middleSection {
+    justify-content: space-around;
+  }
+  .appTitle {
+    font-size: 40px;
+  }
+  .appTitle span {
+    font-size: 50px;
+  }
+  #inTheaters {
+    font-size: 20px;
+  }
+}
+
+/* Animations  */
+
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
