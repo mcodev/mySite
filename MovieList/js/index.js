@@ -189,7 +189,7 @@ const cardsCreator = (dataArr) => {
                ? "url('http://image.tmdb.org/t/p/w185/" +
                  movie.poster_path +
                  "');"
-               : "url(/MovieList/alt.jpg);"
+               : "url(https://images.pexels.com/photos/6447217/pexels-photo-6447217.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);"
            }
            }
         "
