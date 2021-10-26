@@ -31,7 +31,7 @@ document
 window.onload = function show() {
   fetchGenres();
   fetchMovies();
-  document.querySelector("#inTheaters").innerHTML = "In theaters";
+  document.querySelector("#inTheaters").innerHTML = "Latest movies";
 };
 
 ///////////// Get movies  //////////////////////
